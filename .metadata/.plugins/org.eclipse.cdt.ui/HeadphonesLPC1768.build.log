@@ -1,0 +1,11 @@
+10:55:49 **** Incremental Build of configuration Debug for project HeadphonesLPC1768 ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "HeadphonesLPC1768.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3881	    160	    416	   4457	   1169	HeadphonesLPC1768.elf
+Finished building: HeadphonesLPC1768.siz
+ 
+
+10:55:50 Build Finished (took 414ms)
+
