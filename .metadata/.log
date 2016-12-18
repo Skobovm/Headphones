@@ -4912,3 +4912,9 @@ java.io.IOException: Cannot run program "${cross_prefix}${cross_cpp}${cross_suff
 	at org.eclipse.cdt.managedbuilder.language.settings.providers.AbstractBuiltinSpecsDetector$1.runInWorkspace(AbstractBuiltinSpecsDetector.java:496)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.cdt.core 1 0 2016-12-18 14:44:29.059
+!MESSAGE Indexed 'STM32L152Base' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2016-12-18 14:47:05.543
+!MESSAGE Indexed 'STM32L152Base' (16 sources, 28 headers) in 0.949 sec: 3,709 declarations; 3,790 references; 47 unresolved inclusions; 233 syntax errors; 2,185 unresolved names (23%)
