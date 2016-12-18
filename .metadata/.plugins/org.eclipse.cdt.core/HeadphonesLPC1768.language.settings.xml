@@ -4,13 +4,13 @@
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider id="ilg.gnuarmeclipse.managedbuild.cross.GCCBuiltinSpecsDetector">
 				<language id="org.eclipse.cdt.core.gcc">
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/lib/gcc/arm-none-eabi/4.9.3/include">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/lib/gcc/arm-none-eabi/4.9.3/include">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/lib/gcc/arm-none-eabi/4.9.3/include-fixed">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/lib/gcc/arm-none-eabi/4.9.3/include-fixed">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/arm-none-eabi/include">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/arm-none-eabi/include">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
 					<entry kind="macro" name="__ACCUM_EPSILON__" value="0x1P-15K">
@@ -1045,7 +1045,7 @@
 					<entry kind="macro" name="__UTQ_IBIT__" value="0">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="macro" name="__VERSION__" value="&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 227977]&quot;">
+					<entry kind="macro" name="__VERSION__" value="&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 224288]&quot;">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
 					<entry kind="macro" name="__VFP_FP__" value="1">
@@ -1086,22 +1086,22 @@
 					</entry>
 				</language>
 				<language id="org.eclipse.cdt.core.g++">
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/arm-none-eabi/include/c++/4.9.3">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/arm-none-eabi/include/c++/4.9.3">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/arm-none-eabi/include/c++/4.9.3/arm-none-eabi/armv7-m">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/arm-none-eabi/include/c++/4.9.3/arm-none-eabi/armv7-m">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/arm-none-eabi/include/c++/4.9.3/backward">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/arm-none-eabi/include/c++/4.9.3/backward">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/lib/gcc/arm-none-eabi/4.9.3/include">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/lib/gcc/arm-none-eabi/4.9.3/include">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/lib/gcc/arm-none-eabi/4.9.3/include-fixed">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/lib/gcc/arm-none-eabi/4.9.3/include-fixed">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/arm-none-eabi/include">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/arm-none-eabi/include">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
 					<entry kind="macro" name="__ACCUM_EPSILON__" value="0x1P-15K">
@@ -2139,7 +2139,7 @@
 					<entry kind="macro" name="__UTQ_IBIT__" value="0">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="macro" name="__VERSION__" value="&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 227977]&quot;">
+					<entry kind="macro" name="__VERSION__" value="&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 224288]&quot;">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
 					<entry kind="macro" name="__VFP_FP__" value="1">
@@ -2231,13 +2231,13 @@
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider id="ilg.gnuarmeclipse.managedbuild.cross.GCCBuiltinSpecsDetector">
 				<language id="org.eclipse.cdt.core.gcc">
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/lib/gcc/arm-none-eabi/4.9.3/include">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/lib/gcc/arm-none-eabi/4.9.3/include">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/lib/gcc/arm-none-eabi/4.9.3/include-fixed">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/lib/gcc/arm-none-eabi/4.9.3/include-fixed">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/arm-none-eabi/include">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/arm-none-eabi/include">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
 					<entry kind="macro" name="__ACCUM_EPSILON__" value="0x1P-15K">
@@ -3275,7 +3275,7 @@
 					<entry kind="macro" name="__UTQ_IBIT__" value="0">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="macro" name="__VERSION__" value="&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 227977]&quot;">
+					<entry kind="macro" name="__VERSION__" value="&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 224288]&quot;">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
 					<entry kind="macro" name="__VFP_FP__" value="1">
@@ -3316,22 +3316,22 @@
 					</entry>
 				</language>
 				<language id="org.eclipse.cdt.core.g++">
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/arm-none-eabi/include/c++/4.9.3">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/arm-none-eabi/include/c++/4.9.3">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/arm-none-eabi/include/c++/4.9.3/arm-none-eabi/armv7-m">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/arm-none-eabi/include/c++/4.9.3/arm-none-eabi/armv7-m">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/arm-none-eabi/include/c++/4.9.3/backward">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/arm-none-eabi/include/c++/4.9.3/backward">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/lib/gcc/arm-none-eabi/4.9.3/include">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/lib/gcc/arm-none-eabi/4.9.3/include">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/lib/gcc/arm-none-eabi/4.9.3/include-fixed">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/lib/gcc/arm-none-eabi/4.9.3/include-fixed">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="includePath" name="C:/Program Files (x86)/GNU Tools ARM Embedded/4.9 2015q3/arm-none-eabi/include">
+					<entry kind="includePath" name="C:/ARM_GCC/4.9/arm-none-eabi/include">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
 					<entry kind="macro" name="__ACCUM_EPSILON__" value="0x1P-15K">
@@ -4372,7 +4372,7 @@
 					<entry kind="macro" name="__UTQ_IBIT__" value="0">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
-					<entry kind="macro" name="__VERSION__" value="&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 227977]&quot;">
+					<entry kind="macro" name="__VERSION__" value="&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 224288]&quot;">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
 					<entry kind="macro" name="__VFP_FP__" value="1">

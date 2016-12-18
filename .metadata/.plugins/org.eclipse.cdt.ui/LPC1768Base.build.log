@@ -1,0 +1,20 @@
+14:40:44 **** Incremental Build of configuration Release for project LPC1768Base ****
+make all 
+Building target: LPC1768Base.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Os -fmessage-length=0 -ffunction-sections -fdata-sections -fno-inline-functions -fno-builtin -MMD -fno-delete-null-pointer-checks -fomit-frame-pointer -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers  -g -T C:/Projects/Headphones/mbed-os/targets/TARGET_NXP/TARGET_LPC176X/device/TOOLCHAIN_GCC_ARM/LPC1768.ld -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"LPC1768Base.map" -Wl,--gc-sections -Wl,--wrap,main -Wl,--wrap,_malloc_r -Wl,--wrap,_free_r -Wl,--wrap,_realloc_r -Wl,--wrap,_calloc_r -mcpu=cortex-m3 -mthumb -o "LPC1768Base.elf"  ./src/main.o  ./platform/CallChain.o ./platform/mbed_alloc_wrappers.o ./platform/mbed_assert.o ./platform/mbed_board.o ./platform/mbed_critical.o ./platform/mbed_error.o ./platform/mbed_interface.o ./platform/mbed_mem_trace.o ./platform/mbed_rtc_time.o ./platform/mbed_semihost_api.o ./platform/mbed_stats.o ./platform/mbed_wait_api_no_rtos.o ./platform/mbed_wait_api_rtos.o ./platform/retarget.o  ./hal/mbed_gpio.o ./hal/mbed_lp_ticker_api.o ./hal/mbed_pinmap_common.o ./hal/mbed_ticker_api.o ./hal/mbed_us_ticker_api.o  ./events/equeue/equeue.o ./events/equeue/equeue_mbed.o ./events/equeue/equeue_posix.o  ./events/EventQueue.o  ./drivers/AnalogIn.o ./drivers/BusIn.o ./drivers/BusInOut.o ./drivers/BusOut.o ./drivers/CAN.o ./drivers/Ethernet.o ./drivers/FileBase.o ./drivers/FileLike.o ./drivers/FilePath.o ./drivers/FileSystemLike.o ./drivers/I2C.o ./drivers/I2CSlave.o ./drivers/InterruptIn.o ./drivers/InterruptManager.o ./drivers/LocalFileSystem.o ./drivers/RawSerial.o ./drivers/SPI.o ./drivers/SPISlave.o ./drivers/Serial.o ./drivers/SerialBase.o ./drivers/Stream.o ./drivers/Ticker.o ./drivers/Timeout.o ./drivers/Timer.o ./drivers/TimerEvent.o  ./TARGET_NXP/TARGET_LPC176X/device/TOOLCHAIN_GCC_ARM/startup_LPC17xx.o  ./TARGET_NXP/TARGET_LPC176X/device/cmsis_nvic.o ./TARGET_NXP/TARGET_LPC176X/device/system_LPC17xx.o  ./TARGET_NXP/TARGET_LPC176X/analogin_api.o ./TARGET_NXP/TARGET_LPC176X/analogout_api.o ./TARGET_NXP/TARGET_LPC176X/can_api.o ./TARGET_NXP/TARGET_LPC176X/ethernet_api.o ./TARGET_NXP/TARGET_LPC176X/gpio_api.o ./TARGET_NXP/TARGET_LPC176X/gpio_irq_api.o ./TARGET_NXP/TARGET_LPC176X/i2c_api.o ./TARGET_NXP/TARGET_LPC176X/pinmap.o ./TARGET_NXP/TARGET_LPC176X/port_api.o ./TARGET_NXP/TARGET_LPC176X/pwmout_api.o ./TARGET_NXP/TARGET_LPC176X/rtc_api.o ./TARGET_NXP/TARGET_LPC176X/serial_api.o ./TARGET_NXP/TARGET_LPC176X/sleep.o ./TARGET_NXP/TARGET_LPC176X/spi_api.o ./TARGET_NXP/TARGET_LPC176X/us_ticker.o   -lstdc++ -lsupc++ -lm -lc -lgcc -lnosys
+Finished building target: LPC1768Base.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "LPC1768Base.elf"  "LPC1768Base.hex"
+Finished building: LPC1768Base.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "LPC1768Base.elf"
+   text	   data	    bss	    dec	    hex	filename
+  27676	   2188	    632	  30496	   7720	LPC1768Base.elf
+Finished building: LPC1768Base.siz
+ 
+
+14:40:45 Build Finished (took 797ms)
+
