@@ -27,6 +27,8 @@ union si446x_cmd_reply_union Si446xCmd;
 U8 RadioConfigurationDataArray[] = RADIO_CONFIGURATION_DATA_ARRAY;
 U8 customRadioPacket[RADIO_MAX_PACKET_LENGTH];
 
+uint timeVal = 0;
+
 
 U8 radio_comm_PollCTS(void);
 
@@ -658,7 +660,7 @@ U8 bRadio_Check_Tx_RX(void)
       if(Si446xCmd.GET_INT_STATUS.PH_PEND & SI446X_CMD_GET_INT_STATUS_REP_PH_PEND_PACKET_RX_PEND_BIT)
       {
         /* Packet RX */
-        pc.printf("Received Packet!!!\n");
+        //pc.printf("Received Packet!!!\n");
 
         /* Get payload length */
         si446x_fifo_info(0x00);
@@ -759,30 +761,40 @@ int main() {
 
     //myled = 0;
     pc.printf("Starting RX...\n");
-    vRadio_StartRX(0, 7);
+    vRadio_StartRX(0, 48);
     pc.printf("RX Started...\n");
     myled = 1;
 
     while(1) {
       if(bRadio_Check_Tx_RX() == SI446X_CMD_GET_INT_STATUS_REP_PH_PEND_PACKET_RX_PEND_BIT)
       {
-          pc.printf("RX or TX complete\n");
-          pc.printf("Data: %x %x %x %x %x %x %x\n", customRadioPacket[0], customRadioPacket[1], customRadioPacket[2], customRadioPacket[3], customRadioPacket[4], customRadioPacket[5], customRadioPacket[6]);
-          vRadio_StartRX(0, 7);
+    	  if(timeVal == 0)
+    	  {
+    		  timeVal = us_ticker_read();
+    	  }
+    	  else
+    	  {
+    		  int currTime = us_ticker_read();
+    		  pc.printf("Time between packets: %u\n", currTime - timeVal);
+    		  timeVal = 0;
+    	  }
+          //pc.printf("RX or TX complete\n");
+          //pc.printf("Data: %x %x %x %x %x %x %x\n", customRadioPacket[0], customRadioPacket[1], customRadioPacket[2], customRadioPacket[3], customRadioPacket[4], customRadioPacket[5], customRadioPacket[6]);
+          vRadio_StartRX(0, 48);
       }
       if(mybutton == BUTTON_DOWN_POL)
       {
 
         myled = 0;
-        pc.printf("Sending data...\n");
-        //wait_ms(300);
-        for(int pos = 0u; pos < 7; pos++)
+        //pc.printf("Sending data...\n");
+        wait_ms(1);
+        for(int pos = 0u; pos < 48; pos++)
         {
             customRadioPacket[pos] = 0xFF - pos;
         }
 
         // Send data
-        vRadio_StartTx_Variable_Packet(0 /*Channel number*/, &customRadioPacket[0], 7/*Packet length*/);
+        vRadio_StartTx_Variable_Packet(0 /*Channel number*/, &customRadioPacket[0], 48/*Packet length*/);
 
         myled = 1;
        }
