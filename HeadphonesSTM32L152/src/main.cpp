@@ -1,4 +1,5 @@
 #include "mbed.h"
+#include "board.h"
 #include "radio_config.h"
 #include "si446x_cmd.h"
 
@@ -10,14 +11,14 @@
 #define RADIO_CTS_TIMEOUT 100000
 #define RADIO_MAX_PACKET_LENGTH 64
 
-SPI device(PB_5, PB_4, PB_3);
-DigitalIn gpio0(PB_8);
-DigitalIn gpio1(PB_9);
-DigitalIn irqn(PA_8);
-DigitalOut nsel(PB_10);
+SPI device(SPI_MOSI, SPI_MISO, SPI_CLK);
+DigitalIn gpio0(GPIO_0);
+DigitalIn gpio1(GPIO_1);
+DigitalIn irqn(IRQN);
+DigitalOut nsel(NSEL);
 
-DigitalOut myled(LED1);
-DigitalIn mybutton(USER_BUTTON);
+DigitalOut myled(MY_LED);
+DigitalIn mybutton(MY_BUTTON);
 Serial pc(USBTX, USBRX);
 uint8_t ctsWentHigh = 0;
 
@@ -26,7 +27,6 @@ union si446x_cmd_reply_union Si446xCmd;
 U8 RadioConfigurationDataArray[] = RADIO_CONFIGURATION_DATA_ARRAY;
 U8 customRadioPacket[RADIO_MAX_PACKET_LENGTH];
 
-bool rxRestarted = true;
 
 U8 radio_comm_PollCTS(void);
 
@@ -732,6 +732,8 @@ void vRadio_StartTx_Variable_Packet(U8 channel, U8 *pioRadioPacket, U8 length)
 
 int main() {
     pc.printf("Starting up...\n");
+
+    gpio0.mode(PullDown);
     myled = 1;
 
     wait_ms(1000);
@@ -768,9 +770,9 @@ int main() {
           pc.printf("Data: %x %x %x %x %x %x %x\n", customRadioPacket[0], customRadioPacket[1], customRadioPacket[2], customRadioPacket[3], customRadioPacket[4], customRadioPacket[5], customRadioPacket[6]);
           vRadio_StartRX(0, 7);
       }
-      if(mybutton == 0)
+      if(mybutton == BUTTON_DOWN_POL)
       {
-        rxRestarted = false;
+
         myled = 0;
         pc.printf("Sending data...\n");
         //wait_ms(300);
@@ -781,17 +783,12 @@ int main() {
 
         // Send data
         vRadio_StartTx_Variable_Packet(0 /*Channel number*/, &customRadioPacket[0], 7/*Packet length*/);
-        vRadio_StartRX(0, 7);
+
         myled = 1;
        }
        else
        {
-            if(!rxRestarted)
-            {
-                rxRestarted = true;
-                vRadio_StartRX(0, 7);
-            }
-
+            //vRadio_StartRX(0, 7);
             if(gpio0 == 1)
             {
                 //pc.printf("RX BUFFER FULL\n");

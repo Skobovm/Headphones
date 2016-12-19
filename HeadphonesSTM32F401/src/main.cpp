@@ -1,4 +1,5 @@
 #include "mbed.h"
+#include "board.h"
 #include "radio_config.h"
 #include "si446x_cmd.h"
 
@@ -10,14 +11,14 @@
 #define RADIO_CTS_TIMEOUT 100000
 #define RADIO_MAX_PACKET_LENGTH 64
 
-SPI device(PB_5, PB_4, PB_3);
-DigitalIn gpio0(PB_8);
-DigitalIn gpio1(PB_9);
-DigitalIn irqn(PA_8);
-DigitalOut nsel(PB_10);
+SPI device(SPI_MOSI, SPI_MISO, SPI_CLK);
+DigitalIn gpio0(GPIO_0);
+DigitalIn gpio1(GPIO_1);
+DigitalIn irqn(IRQN);
+DigitalOut nsel(NSEL);
 
-DigitalOut myled(LED1);
-DigitalIn mybutton(USER_BUTTON);
+DigitalOut myled(MY_LED);
+DigitalIn mybutton(MY_BUTTON);
 Serial pc(USBTX, USBRX);
 uint8_t ctsWentHigh = 0;
 
@@ -769,7 +770,7 @@ int main() {
           pc.printf("Data: %x %x %x %x %x %x %x\n", customRadioPacket[0], customRadioPacket[1], customRadioPacket[2], customRadioPacket[3], customRadioPacket[4], customRadioPacket[5], customRadioPacket[6]);
           vRadio_StartRX(0, 7);
       }
-      if(mybutton == 0)
+      if(mybutton == BUTTON_DOWN_POL)
       {
 
         myled = 0;
