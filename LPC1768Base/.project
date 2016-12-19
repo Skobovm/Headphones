@@ -26,29 +26,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>TARGET_NXP</name>
+			<name>MBED_REPO</name>
 			<type>2</type>
-			<locationURI>MBED_REPO/targets/TARGET_NXP</locationURI>
-		</link>
-		<link>
-			<name>drivers</name>
-			<type>2</type>
-			<locationURI>MBED_REPO/drivers</locationURI>
-		</link>
-		<link>
-			<name>events</name>
-			<type>2</type>
-			<locationURI>MBED_REPO/events</locationURI>
-		</link>
-		<link>
-			<name>hal</name>
-			<type>2</type>
-			<locationURI>MBED_REPO/hal</locationURI>
-		</link>
-		<link>
-			<name>platform</name>
-			<type>2</type>
-			<locationURI>MBED_REPO/platform</locationURI>
+			<locationURI>MBED_REPO</locationURI>
 		</link>
 	</linkedResources>
 	<variableList>
