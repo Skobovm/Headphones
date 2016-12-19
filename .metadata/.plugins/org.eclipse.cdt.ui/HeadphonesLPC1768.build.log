@@ -1,6 +1,0 @@
-18:35:26 **** Clean-only build of configuration Debug for project HeadphonesLPC1768 ****
-make clean 
-make: *** No rule to make target 'clean'.  Stop.
-
-18:35:26 Build Finished (took 97ms)
-
