@@ -1,5 +1,6 @@
 #include "mbed.h"
 #include "sound.h"
+#include "soundsigned.h"
 #include "opus.h"
 #include "opus_types.h"
 #include "opus_private.h"
@@ -25,9 +26,9 @@ DigitalIn myButton(USER_BUTTON);
 Ticker ticker;
 bool recording = false;
 bool recordingFinished = false;
-const uint16_t data[] = CUSTOM_SOUND;
-uint8_t compressedData[2000];
-uint16_t uncompressedData[5000];
+const uint16_t data[] = CUSTOM_SOUND_SIGNED;
+uint8_t compressedData[4000];
+uint16_t uncompressedData[8000];
 
 //uint8_t encoder[40838];
 int dataIndex = 0;
@@ -233,7 +234,7 @@ Cmd_encode()
 //        printf("OPUS Encoder Completion: %03d\n",
 //                ((ui32RawLen*100)/16));
     }
-    while(codecDataIndex < 4000);
+    while(codecDataIndex < 8000);
     printf("Compressed size: %d bytes", compressedDataIndex);
     encodedDataTotalSize = compressedDataIndex;
 

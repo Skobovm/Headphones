@@ -1,6 +1,8 @@
 #include "mbed.h"
 #include "sound.h"
 #include "soundout.h"
+#include "wavsound.h"
+#include "soundsigned.h"
 #include "opus.h"
 #include "opus_types.h"
 #include "opus_private.h"
@@ -27,7 +29,7 @@ AnalogIn Ain(p17);
 Ticker ticker;
 bool recording = false;
 bool recordingFinished = false;
-uint16_t data[] = CUSTOM_SOUND_OUT;
+uint16_t data[] = HELLO_WAV;
 uint8_t compressedData[8000];
 uint8_t encoder[40838];
 int dataIndex = 0;
@@ -251,9 +253,17 @@ void record()
 	}
 	else
 	{
-		if(dataIndex < 4000)
+		if(dataIndex < 8000)
 		{
-			data[dataIndex] = Ain.read_u16();
+			uint16_t readVal = Ain.read_u16();
+			if(readVal > 0x8000)
+			{
+				data[dataIndex] = readVal - 0x8000;
+			}
+			else
+			{
+				data[dataIndex] = ((0x8000 - readVal) ^ 0xFFFF) + 1;
+			}
 			dataIndex++;
 		}
 		else
@@ -267,10 +277,23 @@ void record()
 
 void play()
 {
-	if(dataIndex < 4000)
+	if(dataIndex < 8000)
 	{
-		Aout.write_u16(data[dataIndex]);
+		if(data[dataIndex] > 0x8000)
+		{
+
+		}
+		else
+		{
+
+		}
+		uint16_t writeVal = (data[dataIndex] + 0x8000);
+		Aout.write_u16(writeVal);
 		dataIndex++;
+	}
+	else
+	{
+		myled = 1;
 	}
 }
 
@@ -280,15 +303,15 @@ int main()
 	ticker.attach(&play, .000125);
 	//printf("Encoding builtin buffer\n");
 	//Cmd_encode();
-	myled = 1;
+
 	while(1) {
         //Aout.write_u16(Ain.read_u16());
 		if(recordingFinished)
 		{
 			myled = 1;
-			while(dataIndex < 4000)
+			while(dataIndex < 8000)
 			{
-				printf("0x%x, ", data[dataIndex]);
+				printf("0x%04x, ", (uint16_t)data[dataIndex]);
 				if(dataIndex % 20 == 0)
 				{
 					printf("\\\n");
