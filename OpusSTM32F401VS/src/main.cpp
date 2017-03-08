@@ -138,6 +138,7 @@ Cmd_encode()
     // Enter a loop to repeatedly read the wav data from the file, encode it
     // and then store it in the sd card.
     //
+    unsigned int time;
     do
     {
         //
@@ -184,12 +185,15 @@ Cmd_encode()
 //                (ui32Sizeofpopi16fmtBuffer/2),
 //                pui8data,
 //                OPUS_MAX_PACKET);
+    	time = us_ticker_read();
         i32len = opus_encode(sOpusEnc,
                         popi16fmtBuffer,
                         (ui32Sizeofpopi16fmtBuffer),
                         pui8data,
                         OPUS_MAX_PACKET);
-
+        time = us_ticker_read() - time;
+		printf("\n");
+		printf("Time to encode: %d us\n", time);
         //
         // If this is not the last packet then add the 'Mid ' as delimiter
         // else add 'End ' as the delimiter which will be used during the
@@ -459,7 +463,7 @@ int main()
 	//ticker.attach(&play, .000125);
 	printf("Encoding builtin buffer\n");
 	unsigned int time = us_ticker_read();
-	//Cmd_encode();
+	Cmd_encode();
 	int stuff = encode();
 	time = us_ticker_read() - time;
 	myled = 1;
